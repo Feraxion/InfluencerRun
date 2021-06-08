@@ -624,8 +624,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPos: {fileID: 1458501474}
+  behindPlayerPos: {fileID: 0}
   followPlayer: 0
   moveSpeed: 1
+  pos: {x: 0, y: 0, z: 0}
 --- !u!54 &516556593
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -877,8 +879,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1458501474}
   offsetX: 0
-  offsetY: 5.63
-  offsetZ: -10.26
+  offsetY: 3.49
+  offsetZ: -12.42
   cameraXrotation: 0
   cameraFov: 60
 --- !u!114 &584626242
