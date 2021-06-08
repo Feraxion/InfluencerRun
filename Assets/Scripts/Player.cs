@@ -39,9 +39,9 @@ public class Player : MonoBehaviour
         //gameObject.GetComponent<Animator>().enabled = true;
            // anim.applyRootMotion = false;
             //anim.SetBool("Drift", true);
-            anim.SetTrigger("Drifter");
+         //anim.SetTrigger("Drifter");
             
-            StartCoroutine(ExampleCoroutine());
+            //StartCoroutine(ExampleCoroutine());
 
             //3 saniyelik coroutine
 

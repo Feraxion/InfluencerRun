@@ -12,7 +12,7 @@ public static class GameSceneManager {
     }
 
     public static void Load(Scene scene) {
-        SceneManager.LoadScene(scene.ToString());
+      //  SceneManager.LoadScene(scene.ToString());
     }
 
 }
