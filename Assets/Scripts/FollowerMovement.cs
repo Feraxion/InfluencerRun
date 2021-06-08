@@ -18,7 +18,9 @@ public class FollowerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        followerManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<FollowerManager>();
     }
 
     // Update is called once per frame
@@ -50,7 +52,7 @@ public class FollowerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !followPlayer)
         {
             TransportBehindPlayer();
             followPlayer = true;
@@ -64,4 +66,6 @@ public class FollowerMovement : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    
 }

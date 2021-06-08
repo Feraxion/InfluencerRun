@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowerManager : MonoBehaviour
+public class MultiplyInfo : MonoBehaviour
 {
-    public int activeFollowerAmount;
-    public int killFollowerAmount;
-    public GameObject followerPrefab;
-  
+
+    public int multiplier;
+    public bool isMultiply;
     
     // Start is called before the first frame update
     void Start()
@@ -20,9 +19,6 @@ public class FollowerManager : MonoBehaviour
     {
         
     }
-
-    void KillFollowers()
-    {
-        activeFollowerAmount -= killFollowerAmount;
-    }
+    
+    
 }
