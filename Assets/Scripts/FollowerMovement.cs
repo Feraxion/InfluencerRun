@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class FollowerMovement : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class FollowerMovement : MonoBehaviour
     public bool followPlayer;
     public float moveSpeed;
     public Vector3 pos;
+    public FollowerManager followerManager;
     
     
     // Start is called before the first frame update
@@ -24,8 +26,11 @@ public class FollowerMovement : MonoBehaviour
     {
         if (followPlayer)
         {
+            
             float speed = moveSpeed * Time.deltaTime;
+
             transform.position = Vector3.MoveTowards(transform.position, playerPos.position, speed);
+
         }
     }
 
@@ -33,7 +38,10 @@ public class FollowerMovement : MonoBehaviour
     {
         pos = playerPos.position;
         
-        pos.z -= 4f;
+        
+        pos.z -= Random.Range(1.5f,5f);
+        pos.x = Random.Range(-7f,2.2f);
+        pos.y = 1.14f;
 
         transform.position = pos;
 
@@ -46,7 +54,14 @@ public class FollowerMovement : MonoBehaviour
         {
             TransportBehindPlayer();
             followPlayer = true;
-            
-        }    
+            followerManager.activeFollowerAmount += 1;
+
+        }
+
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            followerManager.activeFollowerAmount -= 1;
+            Destroy(this.gameObject);
+        }
     }
 }
