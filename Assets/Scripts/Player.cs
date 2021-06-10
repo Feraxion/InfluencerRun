@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     
     public GameObject playerMesh;
     public float diamondPickUpScaleRate;
-    public Animator anim;
+   // public Animator anim;
     public PlayerMovement pMov;
     public Camera finishCam;
 
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        anim = gameObject.GetComponent<Animator>();
+        //anim = gameObject.GetComponent<Animator>();
         //gameObject.GetComponent<Animator>().enabled = false;
         pMov = GetComponent<PlayerMovement>();
     }

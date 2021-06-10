@@ -128,8 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPos: {fileID: 0}
   behindPlayerPos: {fileID: 0}
-  followPlayer: 0
+  followPlayer: 1
   moveSpeed: 4
   pos: {x: 0, y: 0, z: 0}
   followerManager: {fileID: 0}
-  followerGO: {fileID: 0}

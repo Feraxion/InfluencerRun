@@ -38,9 +38,7 @@ public class FollowerGain : MonoBehaviour
 
            if (multiply)
            {
-               switch(multiplier) 
-               {
-                   case 2:
+               
                        
                        for (int i = 0; i < multiplier * followerManager.activeFollowerAmount; i++)
                        {
@@ -54,58 +52,11 @@ public class FollowerGain : MonoBehaviour
                        
                            Instantiate(followerGO, pos, Quaternion.identity);
                        }
-                       
-                       break;
-                   case 3:
-                       for (int i = 0; i < multiplier * followerManager.activeFollowerAmount; i++)
-                       {
-                           pos = playerPos.position;
-        
-        
-                           pos.z -= Random.Range(1.5f,5f);
-                           pos.x = Random.Range(-7f,2.2f);
-                           pos.y = 1.14f;
-                       
-                       
-                           Instantiate(followerGO, pos, Quaternion.identity);
-                       }
-                       
-                       break;
-                   case 4:
-                       for (int i = 0; i < multiplier * followerManager.activeFollowerAmount; i++)
-                       {
-                           pos = playerPos.position;
-        
-        
-                           pos.z -= Random.Range(1.5f,5f);
-                           pos.x = Random.Range(-7f,2.2f);
-                           pos.y = 1.14f;
-                       
-                       
-                           Instantiate(followerGO, pos, Quaternion.identity);
-                       }
-                       break;
-                   case 5:
-                       for (int i = 0; i < multiplier * followerManager.activeFollowerAmount; i++)
-                       {
-                           pos = playerPos.position;
-        
-        
-                           pos.z -= Random.Range(1.5f,5f);
-                           pos.x = Random.Range(-7f,2.2f);
-                           pos.y = 1.14f;
-                       
-                       
-                           Instantiate(followerGO, pos, Quaternion.identity);
-                       }
-                       break;
-                   default:
-                       // code block
-                       break;
-                   
-               }
 
-               followerManager.activeFollowerAmount += multiplier * followerManager.activeFollowerAmount;
+
+
+
+                       followerManager.activeFollowerAmount += multiplier * followerManager.activeFollowerAmount;
            }
            else
            {
