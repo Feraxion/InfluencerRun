@@ -3238,10 +3238,10 @@ MonoBehaviour:
   playerPos: {fileID: 0}
   behindPlayerPos: {fileID: 0}
   followPlayer: 0
-  moveSpeed: 0
+  moveSpeed: 1.86
   pos: {x: 0, y: 0, z: 0}
   followerManager: {fileID: 70147148}
-  followerGO: {fileID: 2154138688702303057, guid: 66e689f68db689545a3f00bad77a2ff2, type: 3}
+  followerGO: {fileID: 1169343317}
 --- !u!1 &1169343317
 GameObject:
   m_ObjectHideFlags: 0
