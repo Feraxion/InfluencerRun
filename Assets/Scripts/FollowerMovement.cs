@@ -20,7 +20,7 @@ public class FollowerMovement : MonoBehaviour
     void Start()
     {
         random = Random.Range(0, 3);
-
+        
         switch (random)
         {
             case 0:
@@ -32,9 +32,9 @@ public class FollowerMovement : MonoBehaviour
             case 2:
                 playerPos = GameObject.FindGameObjectWithTag("Target2").transform;
                 break;
-                
         }
 
+        transform.rotation = Quaternion.Euler(-90, 0, 90); // rotasyonları prefab'de düzgün olmasına rağmen bozuk geliyodu -aybars
         
         followerManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<FollowerManager>();
     }
