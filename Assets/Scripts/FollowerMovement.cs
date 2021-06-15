@@ -13,13 +13,29 @@ public class FollowerMovement : MonoBehaviour
     public float moveSpeed;
     public Vector3 pos;
     public FollowerManager followerManager;
+    private int random;
     
     
     // Start is called before the first frame update
     void Start()
     {
+        random = Random.Range(0, 3);
 
-        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        switch (random)
+        {
+            case 0:
+                playerPos = GameObject.FindGameObjectWithTag("Target").transform;
+                break;
+            case 1:
+                playerPos = GameObject.FindGameObjectWithTag("Target1").transform;
+                break;
+            case 2:
+                playerPos = GameObject.FindGameObjectWithTag("Target2").transform;
+                break;
+                
+        }
+
+        
         followerManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<FollowerManager>();
     }
 

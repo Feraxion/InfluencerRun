@@ -5,22 +5,22 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    private ScoreData sd;
+    private ScoreData scoreData;
 
     private void Awake()
     {
         var json = PlayerPrefs.GetString("scores", defaultValue: "{}");
-        sd = JsonUtility.FromJson<ScoreData>(json);
+        scoreData = JsonUtility.FromJson<ScoreData>(json);
     }
 
     public IEnumerable<Score> GetHighScores()
     {
-        return sd.scores.OrderByDescending(x => x.score); // yükseliğe göre sıralama
+        return scoreData.scores.OrderByDescending(x => x.score); // yükseliğe göre sıralama
     }
 
     public void AddScore(Score score)
     {
-        sd.scores.Add(score);
+        scoreData.scores.Add(score);
     }
 
     private void OnDestroy()
@@ -30,7 +30,7 @@ public class ScoreManager : MonoBehaviour
 
     public void SaveScore()
     {
-        var json = JsonUtility.ToJson(sd);
+        var json = JsonUtility.ToJson(scoreData);
         PlayerPrefs.SetString("scores", json);
     }
 }

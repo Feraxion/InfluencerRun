@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     //Touch settings
     [Header("Touch Settings")]
     [SerializeField] bool isTouching;
-    float touchPosX;
+    public float touchPosX,minX,maxX;
     Vector3 direction;
 
     //Animation
@@ -61,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             transform.position = new Vector3(touchPosX, transform.position.y, transform.position.z);
+            touchPosX = Mathf.Clamp(touchPosX, minX, maxX);
         }
         
     }

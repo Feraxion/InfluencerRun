@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Obstacle
   - Multiply
+  - Target
+  - Target1
+  - Target2
   layers:
   - Default
   - TransparentFX
