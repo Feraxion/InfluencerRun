@@ -34,7 +34,7 @@ public class FollowerMovement : MonoBehaviour
                 break;
         }
 
-        transform.rotation = Quaternion.Euler(-90, 0, 90); // rotasyonları prefab'de düzgün olmasına rağmen bozuk geliyodu -aybars     
+       // transform.rotation = Quaternion.Euler(-90, 0, 90); // rotasyonları prefab'de düzgün olmasına rağmen bozuk geliyodu -aybars     
         
         followerManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<FollowerManager>();
     }
@@ -48,6 +48,7 @@ public class FollowerMovement : MonoBehaviour
             float speed = moveSpeed * Time.deltaTime;
 
             transform.position = Vector3.MoveTowards(transform.position, playerPos.position, speed);
+            transform.LookAt(playerPos);
 
         }
     }
