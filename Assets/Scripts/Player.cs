@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         {
             pMov.enabled = false;
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        //GameManager.inst.playerState = GameManager.PlayerState.Finish;
+            GameManager.inst.playerState = GameManager.PlayerState.Finish;
         //gameObject.GetComponent<Animator>().enabled = true;
            // anim.applyRootMotion = false;
             //anim.SetBool("Drift", true);
@@ -69,16 +69,6 @@ public class Player : MonoBehaviour
         {
 
             
-            if (col.gameObject.GetComponent<ObstacleValue>().ObstacleScale > gameObject.transform.localScale.x)
-            {
-                Destroy(gameObject);
-                GameManager.inst.playerState = GameManager.PlayerState.Died;
-            }
-            else
-            {
-                gameObject.transform.localScale /= col.gameObject.GetComponent<ObstacleValue>().ObstacleDamage;
-                Destroy(col.gameObject);
-            }        
             /*if (col.transform.localScale.x > gameObject.transform.localScale.x)
             {
                 Destroy(gameObject);

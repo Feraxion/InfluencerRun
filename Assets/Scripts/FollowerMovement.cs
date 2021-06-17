@@ -84,5 +84,11 @@ public class FollowerMovement : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            followerManager.activeFollowerAmount -= 1;
+            Destroy(this.gameObject);
+        }    }
 }
