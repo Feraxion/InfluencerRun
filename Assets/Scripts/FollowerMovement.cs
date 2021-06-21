@@ -40,14 +40,14 @@ public class FollowerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (followPlayer)
         {
             
             float speed = moveSpeed * Time.deltaTime;
 
-            transform.position = Vector3.MoveTowards(transform.position, playerPos.position, speed);
+            transform.position = Vector3.MoveTowards(transform.position, playerPos.position, speed );
             transform.LookAt(playerPos);
 
         }
