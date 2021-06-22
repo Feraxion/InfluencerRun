@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Transform[] targets;
     public Rigidbody m_Rigidbody;
     [Header("Speed Settings")]
     public float movementSpeed;
@@ -37,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
         //Start game if in Playing State
         if (playerState == GameManager.PlayerState.Playing)
         {
-            GetInput();
             
 
         }
@@ -48,11 +49,13 @@ public class PlayerMovement : MonoBehaviour
         //Start game if in Playing State
         if (playerState == GameManager.PlayerState.Playing)
         {
+            GetInput();
+
             //RigidBody Eklentisinden sonra burası rigidbody olarak değişecek
             //m_Rigidbody.AddForce(transform.forward * movementSpeed);
             //transform.position += m_Rigidbody.AddForce(transform.forward * movementSpeed);
-            //transform.position += Vector3.forward * movementSpeed * Time.fixedDeltaTime;
-            m_Rigidbody.velocity = Vector3.forward * movementSpeed;
+            transform.position += Vector3.forward * movementSpeed * Time.fixedDeltaTime;
+           // m_Rigidbody.velocity = Vector3.forward * movementSpeed;
             //animator.SetTrigger("GameStart"); // start the animation
             //m_Rigidbody.AddForce(Vector3.forward * movementSpeed * Time.fixedDeltaTime);
             if (isTouching)
@@ -89,4 +92,44 @@ public class PlayerMovement : MonoBehaviour
             isTouching = false;
         }
     }
+    
+    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("EnemyTrigger"))
+        {
+            
+            for (int i = 0; i < targets.Length; i++)
+            {
+                Vector3 plusPos = targets[i].transform.position;
+                plusPos.z += 5f;
+                targets[i].transform.position = plusPos;
+                Debug.Log("Works");
+            }
+
+            movementSpeed -= 5f;
+
+            StartCoroutine(WaitSecRoutine());
+        }
+    }
+    
+    IEnumerator WaitSecRoutine()
+    {
+       
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(3);
+        movementSpeed += 5f;
+
+        for (int i = 0; i < targets.Length; i++)
+        {
+            Vector3 plusPos = targets[i].transform.position;
+            plusPos.z -= 5f;
+            targets[i].transform.position = plusPos;
+            
+            
+        }
+
+    }
+    
 }

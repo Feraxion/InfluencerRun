@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         {
             pMov.enabled = false;
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            GameManager.inst.playerState = GameManager.PlayerState.Finish;
+            //GameManager.inst.playerState = GameManager.PlayerState.Finish;
         //gameObject.GetComponent<Animator>().enabled = true;
            // anim.applyRootMotion = false;
             //anim.SetBool("Drift", true);

@@ -9,6 +9,13 @@ TagManager:
   - Target
   - Target1
   - Target2
+  - Enemy
+  - Target3
+  - Target4
+  - EnemyTrigger
+  - LookAt
+  - Follower
+  - EnemyTriggerFinal
   layers:
   - Default
   - TransparentFX

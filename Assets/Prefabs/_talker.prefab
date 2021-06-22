@@ -1210,12 +1210,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7147020324233661560}
   - component: {fileID: 7252458287701732240}
-  - component: {fileID: 7252458287701732241}
   - component: {fileID: 7252458287701732239}
   - component: {fileID: 7252458287701732238}
+  - component: {fileID: 2444377374647870635}
   m_Layer: 0
   m_Name: _talker
-  m_TagString: Untagged
+  m_TagString: Follower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1251,20 +1251,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 1
---- !u!65 &7252458287701732241
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7522279882722744002}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.3681097, y: 1.7219896, z: 0.61509705}
-  m_Center: {x: 0.030494928, y: 0.87523985, z: 0.021484375}
+  m_CollisionDetection: 3
 --- !u!95 &7252458287701732239
 Animator:
   serializedVersion: 3
@@ -1296,12 +1283,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0368c2c706622984680628150b78ead0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   playerPos: {fileID: 0}
   behindPlayerPos: {fileID: 0}
   followPlayer: 1
-  moveSpeed: 7
+  moveSpeed: 6.95
   pos: {x: 0, y: 0, z: 0}
   followerManager: {fileID: 0}
+  isMoving: 0
+  smoothTime: 0.3
+--- !u!136 &2444377374647870635
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7522279882722744002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.8962953
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.90784585, z: 0}
 --- !u!1 &7695392386837676774
 GameObject:
   m_ObjectHideFlags: 0
