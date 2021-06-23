@@ -136,6 +136,15 @@ public class FollowerMovement : MonoBehaviour
                     Destroy(this.gameObject);
                     Destroy(other.gameObject);
                 }
+
+                if (other.gameObject.CompareTag("EnemyInf"))
+                {
+                    followerManager.activeFollowerAmount -= 1;
+                    Destroy(this.gameObject);
+                    Destroy(other.gameObject);
+                    GameManager.inst.playerState = GameManager.PlayerState.Finish;
+
+                }
             }
 
             private void OnCollisionExit(Collision other)
@@ -154,8 +163,19 @@ public class FollowerMovement : MonoBehaviour
                 if (other.gameObject.CompareTag("Enemy"))
                 {
                     followerManager.activeFollowerAmount -= 1;
+                    
+                    
+                    Destroy(this.gameObject,4);
+                    Destroy(other.gameObject);
+                }
+                
+                if (other.gameObject.CompareTag("EnemyInf"))
+                {
+                    followerManager.activeFollowerAmount -= 1;
                     Destroy(this.gameObject);
                     Destroy(other.gameObject);
+                    GameManager.inst.playerState = GameManager.PlayerState.Finish;
+
                 }
             }
 }

@@ -4,20 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyInfMovement : MonoBehaviour
 {
     public bool attackPlayer;
     public Transform playerPos;
     public float moveSpeed;
+    public Animator anim;
 
     private int random;
-
-    public Vector3 lastPos;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (!GetComponent<Animator>() == null)
+        {
+            anim = GetComponent<Animator>();
+
+        }
         
         random = Random.Range(0, 5);
         
@@ -46,18 +49,17 @@ public class EnemyMovement : MonoBehaviour
     {
         if (attackPlayer)
         {
-            lastPos=transform.rotation.eulerAngles;
-            
-            lastPos.z = 0f;
-            
-            transform.rotation = Quaternion.Euler(lastPos);
             
             float speed = moveSpeed * Time.deltaTime;
 
             transform.position = Vector3.MoveTowards(transform.position, playerPos.position, speed );
             transform.LookAt(playerPos);
             
-            
+            if (!anim.GetBool("isAttacking"))
+            {
+                anim.SetBool("isAttacking",true);
+
+            }
         }
         
         

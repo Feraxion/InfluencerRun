@@ -70,9 +70,7 @@ public class RotateDoor : MonoBehaviour
                 if (rot2.y > rotateRightDegree-2)
                 {
                     openDoor = false;
-                    Debug.Log("wtf");
                 }
-                Debug.Log(rot2.y);
 
         
          

@@ -68,20 +68,8 @@ public class Player : MonoBehaviour
         if (col.gameObject.tag == "Obstacle")
         {
 
+            GameManager.inst.playerState = GameManager.PlayerState.Finish;
             
-            /*if (col.transform.localScale.x > gameObject.transform.localScale.x)
-            {
-                Destroy(gameObject);
-                GameManager.inst.playerState = GameManager.PlayerState.Died;
-
-                // Add gameover screen
-            }
-            else
-            {
-                gameObject.transform.localScale /= 1.5f;
-                Destroy(col.gameObject);
-                //MAYBE ADD SOME SHATTERED VERSIONS
-            }    */        
         }
     }
     void NextLevel()

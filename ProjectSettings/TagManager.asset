@@ -16,6 +16,8 @@ TagManager:
   - LookAt
   - Follower
   - EnemyTriggerFinal
+  - Diamond
+  - EnemyInf
   layers:
   - Default
   - TransparentFX

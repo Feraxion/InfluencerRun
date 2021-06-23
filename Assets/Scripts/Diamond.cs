@@ -10,14 +10,15 @@ public class Diamond : MonoBehaviour
     private void OnTriggerEnter(Collider col)
     {
         // check that the object we collided with is the player
-        if (col.gameObject.tag != "Player")
+        if (col.gameObject.CompareTag("Player"))
         {
-            return;
+            // Add to the player's diamond 
+            GameManager.inst.IncrementDiamond();
+            //Destroy the diamond object
+            Destroy(gameObject);
+            
         }
-        // Add to the player's diamond 
-        GameManager.inst.IncrementDiamond();
-        //Destroy the diamond object
-        Destroy(gameObject);
+       
     }
 
      void Update()
