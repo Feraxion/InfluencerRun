@@ -18,6 +18,7 @@ TagManager:
   - EnemyTriggerFinal
   - Diamond
   - EnemyInf
+  - Block
   layers:
   - Default
   - TransparentFX

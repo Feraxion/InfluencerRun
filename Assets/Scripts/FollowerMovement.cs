@@ -63,35 +63,37 @@ public class FollowerMovement : MonoBehaviour
             {
                 if (followPlayer )
                 {
-                  
-                        float speed = moveSpeed  * Time.fixedDeltaTime;
-    
-                        transform.position = Vector3.MoveTowards(transform.position, playerPos.position, speed);
-                        //m_Rigidbody.velocity = Vector3.forward * speed;
-                        //transform.position = Vector3.Lerp(transform.position, playerPos.position, speed);
-                        //transform.LookAt(player);
-                        //float newPosition = Mathf.SmoothDamp(transform.position.z, playerPos.position.z, ref yVelocity, smoothTime);
-                       // transform.position = new Vector3(transform.position.x, newPosition, transform.position.z);                        // if(transform.position == playerPos.position)
-                        // {
-                        //     isMoving = false;
-                        //
-                        //     // So in order to eliminate any remaining difference
-                        //     // make sure to set it to the correct target position
-                        //     transform.position = playerPos.position;
-                        // }
-                        
-                        // move follower //
-                    
+                    //Vector3 direction = (playerPos.position - transform.position).normalized;
+                    float speed = moveSpeed  * Time.fixedDeltaTime;
+                    //transform.position += direction * speed * Time.deltaTime;
+
+                    //transform.position = Vector3.Lerp(transform.position, playerPos.position, 0.5f);
+                    transform.position = Vector3.MoveTowards(transform.position, playerPos.position, speed);
+                    //m_Rigidbody.velocity = Vector3.forward * speed;
+                    //transform.position = Vector3.Lerp(transform.position, playerPos.position, speed);
+                    //transform.LookAt(player);
+                    //float newPosition = Mathf.SmoothDamp(transform.position.z, playerPos.position.z, ref yVelocity, smoothTime);
+                    // transform.position = new Vector3(transform.position.x, newPosition, transform.position.z);                        // if(transform.position == playerPos.position)
+                    // {
+                    //     isMoving = false;
+                    //
+                    //     // So in order to eliminate any remaining difference
+                    //     // make sure to set it to the correct target position
+                    //     transform.position = playerPos.position;
+                    // }
+
+                    // move follower //
 
 
 
-                        // var distance = Vector3.Distance(transform.position, playerPos.position);
-                        //
-                        //
-                        // if (distance <1.5f)
-                        // {
-                        //     isMoving = true;
-                        // }
+
+                    // var distance = Vector3.Distance(transform.position, playerPos.position);
+                    //
+                    //
+                    // if (distance <1.5f)
+                    // {
+                    //     isMoving = true;
+                    // }
                 }
                 
                 
