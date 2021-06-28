@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/RunnerMain.unity
-    guid: f4861a47566c92b4eb555a4c5782132e
+    path: Assets/Scenes/AybarsTest.unity
+    guid: 4d3be85a34a069f42a0b83e357eac959
   m_configObjects: {}
