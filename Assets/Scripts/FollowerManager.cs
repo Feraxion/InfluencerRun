@@ -11,31 +11,33 @@ public class FollowerManager : MonoBehaviour
     public GameObject player;
 
     public List<GameObject> followerSpots;
+    public List<GameObject> followers;
     
     // Start is called before the first frame update
     void Start()
     {
         followerSpots = new List<GameObject>();
         followerSpots.AddRange(GameObject.FindGameObjectsWithTag("Spot"));
+        
+        //followers = new List<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+       //  Debug.Log(followers.Count);
     }
 
     public void AddToFollowerList()
     {
         foreach (var spot in followerSpots)
         {
-            Debug.Log("foreach calisiyor");
             if (spot.GetComponent<isSpotEmpty>().isEmpty)
             {
 
-                    Debug.Log("if calisiyor");
                     
                 Instantiate(followerPrefab, spot.transform.position, Quaternion.identity,spot.transform );
+                //followers.Add(followerPrefab.gameObject); 
                 spot.GetComponent<isSpotEmpty>().isEmpty = false;
                 
                 //follower.transform.position = spot.transform.position;
@@ -45,6 +47,11 @@ public class FollowerManager : MonoBehaviour
             }
 
         }
+    }
+
+    public void ArrengeFormation()
+    {
+        
     }
     
     // void addEnemy(GameObject currentEnemy) {

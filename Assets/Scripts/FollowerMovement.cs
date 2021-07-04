@@ -16,6 +16,7 @@ public class FollowerMovement : MonoBehaviour
     public FollowerManager followerManager;
     private int random;
     public bool isMoving;
+    public GameObject poof;
 
 
     private Rigidbody m_Rigidbody;
@@ -133,14 +134,20 @@ public class FollowerMovement : MonoBehaviour
                 if (other.gameObject.CompareTag("Obstacle"))
                 {
                     followerManager.activeFollowerAmount -= 1;
+                    
                     Destroy(this.gameObject);
                 }
     
                 if (other.gameObject.CompareTag("Enemy"))
                 {
-                    followerManager.activeFollowerAmount -= 1;
-                    Destroy(this.gameObject);
-                    Destroy(other.gameObject);
+                   /// poof.GetComponent<ParticleSystem>().Play();
+                   // followerManager.activeFollowerAmount -= 1;
+                    //Destroy(other.gameObject);
+
+                   // gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                   // Destroy(this.gameObject);
+                   //gameObject.SetActive(false);
+                    
                 }
 
                 if (other.gameObject.CompareTag("EnemyInf"))
@@ -149,6 +156,8 @@ public class FollowerMovement : MonoBehaviour
                     Destroy(this.gameObject);
                     Destroy(other.gameObject);
                     GameManager.inst.playerState = GameManager.PlayerState.Finish;
+                    gameObject.SetActive(false);
+
 
                 }
             }
@@ -169,7 +178,6 @@ public class FollowerMovement : MonoBehaviour
                 if (other.gameObject.CompareTag("Enemy"))
                 {
                     followerManager.activeFollowerAmount -= 1;
-                    
                     
                     Destroy(this.gameObject,4);
                     Destroy(other.gameObject);

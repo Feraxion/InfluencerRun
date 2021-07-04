@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("EnemyTrigger"))
+        /*if (other.gameObject.CompareTag("EnemyTrigger"))
         {
             
             for (int i = 0; i < targets.Length; i++)
@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
             movementSpeed -= 5f;
 
             StartCoroutine(WaitSecRoutine());
-        }
+        }*/
     }
     
     IEnumerator WaitSecRoutine()

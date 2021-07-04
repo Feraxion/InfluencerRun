@@ -16,7 +16,14 @@ public class isSpotEmpty : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.childCount == 0)
+        {
+            isEmpty = true;
+        }
+        else
+        {
+            isEmpty = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,8 +31,12 @@ public class isSpotEmpty : MonoBehaviour
         if (other.gameObject.CompareTag("Follower"))
         {
             isEmpty = false;
+            Debug.Log("girdi");
+    
         }
     }
+
+    
 
 
     private void OnTriggerExit(Collider other)
@@ -33,6 +44,7 @@ public class isSpotEmpty : MonoBehaviour
         if (other.gameObject.CompareTag("Follower"))
         {
             isEmpty = true;
+                Debug.Log("cikti");
         }
     }
 }

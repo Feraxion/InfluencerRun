@@ -10,6 +10,7 @@ public class EnemyInfMovement : MonoBehaviour
     public Transform playerPos;
     public float moveSpeed;
     public Animator anim;
+    public Vector3 lastPos;
 
     private int random;
 
@@ -49,6 +50,12 @@ public class EnemyInfMovement : MonoBehaviour
     {
         if (attackPlayer)
         {
+            
+            lastPos=transform.rotation.eulerAngles;
+            
+            lastPos.z = 0f;
+            
+            transform.rotation = Quaternion.Euler(lastPos);
             
             float speed = moveSpeed * Time.deltaTime;
 

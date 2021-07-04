@@ -7,6 +7,7 @@ public class EnemyTrigger : MonoBehaviour
 {
 
     public EnemyMovement[] enemy;
+    public EnemyInfMovement enemyInf;
     
     
     
@@ -29,6 +30,15 @@ public class EnemyTrigger : MonoBehaviour
             for (int i = 0; i < enemy.Length; i++)
             {
                 enemy[i].attackPlayer = true;
+            }
+
+            if (enemyInf == null)
+            {
+            }
+            else
+            {
+                enemyInf.attackPlayer = true;
+
             }
             
             Destroy(this.gameObject,2);
