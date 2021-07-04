@@ -19,6 +19,7 @@ TagManager:
   - Diamond
   - EnemyInf
   - Block
+  - Spot
   layers:
   - Default
   - TransparentFX

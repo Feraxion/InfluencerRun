@@ -17,6 +17,7 @@ public class FollowerMovement : MonoBehaviour
     private int random;
     public bool isMoving;
 
+
     private Rigidbody m_Rigidbody;
 
     
@@ -68,7 +69,10 @@ public class FollowerMovement : MonoBehaviour
                     //transform.position += direction * speed * Time.deltaTime;
 
                     //transform.position = Vector3.Lerp(transform.position, playerPos.position, 0.5f);
-                    transform.position = Vector3.MoveTowards(transform.position, playerPos.position, speed);
+                   ////////// transform.position = Vector3.MoveTowards(transform.position, playerPos.position, speed);
+                    //m_Rigidbody.AddForce((playerPos.position - transform.position) * speed);
+                    // m_Rigidbody.velocity = Vector3.forward * speed;
+
                     //m_Rigidbody.velocity = Vector3.forward * speed;
                     //transform.position = Vector3.Lerp(transform.position, playerPos.position, speed);
                     //transform.LookAt(player);

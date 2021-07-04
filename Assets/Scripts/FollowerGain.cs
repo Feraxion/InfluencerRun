@@ -42,41 +42,48 @@ public class FollowerGain : MonoBehaviour
                        
                        for (int i = 0; i < multiplier * followerManager.activeFollowerAmount; i++)
                        {
-                           pos = playerPos.position;
-        
-        
-                           pos.z -= Random.Range(1.5f,5f);
-                           pos.x = Random.Range(-7f,2.2f);
-                           pos.y = 1.14f;
+                           // pos = playerPos.position;
+                           //
+                           //
+                           // pos.z -= Random.Range(1.5f,5f);
+                           // pos.x = Random.Range(-7f,2.2f);
+                           // pos.y = 1.14f;
                        
-                       
-                           Instantiate(followerGO, pos, Quaternion.identity);
+                            Debug.Log("calsiyur");
+                           followerManager.AddToFollowerList();
                        }
 
 
 
 
-                       followerManager.activeFollowerAmount += multiplier * followerManager.activeFollowerAmount;
+                       // followerManager.activeFollowerAmount += multiplier * followerManager.activeFollowerAmount;
            }
            else
            {
                for (int i = 0; i < multiplier; i++)
                {
-                   pos = playerPos.position;
-        
-        
-                   pos.z -= Random.Range(1.5f,5f);
-                   pos.x = Random.Range(-7f,2.2f);
-                   pos.y = 1.14f;
+                   // pos = playerPos.position;
+                   //
+                   //
+                   // pos.z -= Random.Range(1.5f,5f);
+                   // pos.x = Random.Range(-7f,2.2f);
+                   // pos.y = 1.14f;
+                   //     
                        
-                       
-                   Instantiate(followerGO, pos, Quaternion.identity);
+                   followerManager.AddToFollowerList();
+                   Debug.Log("calsiyur");
+                    
+
                    
                }
                
-               followerManager.activeFollowerAmount += multiplier;
+               //followerManager.activeFollowerAmount += multiplier;
+               
 
            }
+           
+           other.gameObject.GetComponent<BoxCollider>().enabled = false;
+
 
         }
     }

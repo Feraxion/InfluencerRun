@@ -92,7 +92,6 @@ public class RotateDoor : MonoBehaviour
                  doorRight.transform.rotation = Quaternion.Euler(rotateRightDegree);*/
             }
             
-        Debug.Log(rotateRightDegree);
 
 
     }
