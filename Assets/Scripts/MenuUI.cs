@@ -1,10 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuUI : MonoBehaviour
 {
+    public GameManager gameMng;
+
+    private void Start()
+    {
+        gameMng = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+
+    }
+
     // Start is called before the first frame update
     public void PlayGame()
     {
@@ -14,8 +23,8 @@ public class MenuUI : MonoBehaviour
     //OnClick Button
     public void StartGame()
     {
-        GameManager.inst.playerState = GameManager.PlayerState.Playing;
-        GameManager.inst.StartScreen.SetActive(false);
+        gameMng.playerState = GameManager.PlayerState.Playing;
+        gameMng.StartScreen.SetActive(false);
     }
 
     public void SkipLevel()
@@ -27,8 +36,8 @@ public class MenuUI : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //currentLevelDiamondCount = 0;
-        GameManager.inst.currentLevelDiamondCount = 0;
-        GameManager.inst.bonusMultiplier = 1;
+        gameMng.currentLevelDiamondCount = 0;
+        gameMng.bonusMultiplier = 1;
     }
 
     public void RestartGame()

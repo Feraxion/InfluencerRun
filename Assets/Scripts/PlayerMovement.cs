@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     
     //Not sure about this// Getting playerstate from gamemanager
     public GameManager.PlayerState playerState;
+    public GameManager gameMng;
 
     private void Awake()
     {
@@ -31,18 +32,23 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        gameMng = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        
+    }
+
     private void Update()
     {
-        //Make sure its in sync
-        playerState =  GameManager.inst.playerState ;
+        
+            playerState =  gameMng.playerState ;
 
-        //Start game if in Playing State
-        if (playerState == GameManager.PlayerState.Playing)
-        {
-            
-
-        }
+        
+        
     }
+
+       
+    
 
     private void FixedUpdate()
     {
