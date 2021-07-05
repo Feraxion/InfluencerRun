@@ -23,15 +23,15 @@ public class SettingsManager : MonoBehaviour
     public void OpenSettings()
     {
         settingsUI.SetActive(true);
-        GameManager.inst.StartScreen.SetActive(false);
-        GameManager.inst.playerState = GameManager.PlayerState.Shopping;
+       // GameManager.inst.StartScreen.SetActive(false);
+       // GameManager.inst.playerState = GameManager.PlayerState.Shopping;
     }
 
     public void CloseSettings()
     {
         settingsUI.SetActive(false);
-        GameManager.inst.StartScreen.SetActive(true);
-        GameManager.inst.playerState = GameManager.PlayerState.Prepare;
+        //GameManager.inst.StartScreen.SetActive(true);
+       // GameManager.inst.playerState = GameManager.PlayerState.Prepare;
 
     }
     

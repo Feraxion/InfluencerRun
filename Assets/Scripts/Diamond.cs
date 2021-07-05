@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class Diamond : MonoBehaviour
 {
+    public GameManager gameMng;
+
     private void Start()
     {
+        gameMng = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         poff = GetComponentInChildren<ParticleSystem>();
+
     }
 
     [Header("Diamond Components")]
@@ -21,7 +25,7 @@ public class Diamond : MonoBehaviour
         {
             poff.Play();
             // Add to the player's diamond 
-            GameManager.inst.IncrementDiamond();
+            gameMng.IncrementDiamond();
             //Destroy the diamond object
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             Destroy(gameObject,3);

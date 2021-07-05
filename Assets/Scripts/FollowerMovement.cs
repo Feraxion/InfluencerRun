@@ -17,7 +17,7 @@ public class FollowerMovement : MonoBehaviour
     private int random;
     public bool isMoving;
     public GameObject poof;
-
+    public GameManager gameMng;
 
     private Rigidbody m_Rigidbody;
 
@@ -26,6 +26,9 @@ public class FollowerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        gameMng = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+
         random = Random.Range(0, 5);
 
         switch (random)
@@ -155,7 +158,7 @@ public class FollowerMovement : MonoBehaviour
                     followerManager.activeFollowerAmount -= 1;
                     Destroy(this.gameObject);
                     Destroy(other.gameObject);
-                    GameManager.inst.playerState = GameManager.PlayerState.Finish;
+                    gameMng.playerState = GameManager.PlayerState.Finish;
                     gameObject.SetActive(false);
 
 
@@ -188,7 +191,7 @@ public class FollowerMovement : MonoBehaviour
                     followerManager.activeFollowerAmount -= 1;
                     Destroy(this.gameObject);
                     Destroy(other.gameObject);
-                    GameManager.inst.playerState = GameManager.PlayerState.Finish;
+                    gameMng.playerState = GameManager.PlayerState.Finish;
 
                 }
             }

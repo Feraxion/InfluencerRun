@@ -19,9 +19,6 @@ public class GameManager : MonoBehaviour
     public GameObject StartScreen;
     public GameObject FinishScreen;
     public GameObject GameOverScreen;
-
-
-    public static GameManager inst;
     
     public enum PlayerState
     {
@@ -50,7 +47,6 @@ public class GameManager : MonoBehaviour
             
         }
 
-        inst = this;
         playerState = PlayerState.Prepare;
         Application.targetFrameRate = 30;
     }

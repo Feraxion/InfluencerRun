@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public ParticleSystem diaPoff;
     public FollowerManager followerManager;
 
+    public GameManager gameMng;
+
     [Header("End Game Particle")]
     [SerializeField] public GameObject endGameParticle;
     [SerializeField] public GameObject nextLevelScreen;
@@ -65,22 +67,7 @@ public class Player : MonoBehaviour
                     
         }
 
-        if (col.gameObject.tag == "2xZone")
-        {
-            GameManager.inst.bonusMultiplier = 2;
-        }
-        
-        
-        if (col.gameObject.tag == "3xZone")
-        {
-            GameManager.inst.bonusMultiplier = 3;
-        }
-        
-        
-        if (col.gameObject.tag == "4xZone")
-        {
-            GameManager.inst.bonusMultiplier = 4;
-        }       
+             
         if (col.gameObject.tag == "Obstacle")
         {
             if (followerManager.activeFollowerAmount >0)
@@ -89,7 +76,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                GameManager.inst.playerState = GameManager.PlayerState.Died;
+                gameMng.playerState = GameManager.PlayerState.Died;
 
             }
             
@@ -97,7 +84,7 @@ public class Player : MonoBehaviour
 
         if (col.CompareTag("EnemyInf"))
         {
-            GameManager.inst.playerState = GameManager.PlayerState.Finish;
+            gameMng.playerState = GameManager.PlayerState.Finish;
             Destroy(col.gameObject);
 
         }
@@ -113,7 +100,7 @@ public class Player : MonoBehaviour
         
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(4);
-        GameManager.inst.playerState = GameManager.PlayerState.Finish;
+        gameMng.playerState = GameManager.PlayerState.Finish;
 
 
     }

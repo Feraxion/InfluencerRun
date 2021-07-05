@@ -12,11 +12,11 @@ public class ScoreUI : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.inst.playerState == GameManager.PlayerState.Finish && !scoreSet)
-        {
-            StartCoroutine(ExampleCoroutine());
-            scoreSet = true;
-        }
+        // if (GameManager.inst.playerState == GameManager.PlayerState.Finish && !scoreSet)
+        // {
+        //     StartCoroutine(ExampleCoroutine());
+        //     scoreSet = true;
+        // }
     }
     
     IEnumerator ExampleCoroutine()
