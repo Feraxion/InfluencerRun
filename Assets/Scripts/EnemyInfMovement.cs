@@ -22,27 +22,8 @@ public class EnemyInfMovement : MonoBehaviour
             anim = GetComponent<Animator>();
 
         }
-        
-        random = Random.Range(0, 5);
-        
-        switch (random)
-        {
-            case 0:
-                playerPos = GameObject.FindGameObjectWithTag("Target").transform;
-                break;
-            case 1:
-                playerPos = GameObject.FindGameObjectWithTag("Target1").transform;
-                break;
-            case 2:
-                playerPos = GameObject.FindGameObjectWithTag("Target2").transform;
-                break;
-            case 3:
-                playerPos = GameObject.FindGameObjectWithTag("Target3").transform;
-                break;
-            case 4:
-                playerPos = GameObject.FindGameObjectWithTag("Target4").transform;
-                break;
-        }
+
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
