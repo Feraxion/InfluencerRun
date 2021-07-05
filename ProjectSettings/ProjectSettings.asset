@@ -249,7 +249,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: '{dedicated}: Desktop/Popular Run keystore.keystore'
+  AndroidKeystoreName: C:/Users/aybarskesebir.dev/Desktop/Skip Games/keystore/Popular
+    Run keystore.keystore
   AndroidKeyaliasName: popular run
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
