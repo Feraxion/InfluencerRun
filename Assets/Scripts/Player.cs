@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
     public void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Finish")
+        if (col.gameObject.CompareTag("Finish"))
         {
             pMov.enabled = false;
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
         }
 
              
-        if (col.gameObject.tag == "Obstacle")
+        if (col.gameObject.CompareTag("Obstacle"))
         {
             if (followerManager.activeFollowerAmount >0)
             {
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
             
         }
 
-        if (col.CompareTag("EnemyInf"))
+        if (col.gameObject.CompareTag("EnemyInf"))
         {
             gameMng.playerState = GameManager.PlayerState.Finish;
             Destroy(col.gameObject);
