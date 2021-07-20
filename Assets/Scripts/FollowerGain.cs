@@ -49,8 +49,9 @@ public class FollowerGain : MonoBehaviour
                            // pos.x = Random.Range(-7f,2.2f);
                            // pos.y = 1.14f;
                        
-                            Debug.Log("calsiyur");
+                           //followerManager.AddToFollowerList();
                            followerManager.AddToFollowerList();
+
                        }
 
 
@@ -71,8 +72,7 @@ public class FollowerGain : MonoBehaviour
                    //     
                        
                    followerManager.AddToFollowerList();
-                   Debug.Log("calsiyur");
-                    
+
 
                    
                }
@@ -86,5 +86,15 @@ public class FollowerGain : MonoBehaviour
 
 
         }
+    }
+    
+    IEnumerator ExampleCoroutine()
+    {
+        
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(0.5f);
+        followerManager.AddToFollowerList();
+
+
     }
 }

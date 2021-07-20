@@ -56,8 +56,12 @@ public class EnemyMovement : MonoBehaviour
 
             transform.position = Vector3.MoveTowards(transform.position, playerPos.position, speed );
             transform.LookAt(playerPos);
+            float distance = Vector3.Distance(playerPos.position, gameObject.transform.position);
             
-            
+            if (distance < 1f)
+            {
+                Destroy(this.gameObject);
+            }
         }
         
         
@@ -80,7 +84,6 @@ public class EnemyMovement : MonoBehaviour
             if (other.gameObject.CompareTag("Follower"))
             {
                 destroyedOnce = true;
-                Debug.Log("yoketti");
 
                 poof.Play();
                 Destroy(gameObject,0.2f);
