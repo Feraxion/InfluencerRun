@@ -35,6 +35,7 @@ public class FollowerManager : MonoBehaviour
             if (spot.GetComponent<isSpotEmpty>().isEmpty)
             {
 
+                    
                 Instantiate(followerPrefab, spot.transform.position, Quaternion.identity,spot.transform );
                 //followers.Add(followerPrefab.gameObject); 
                 spot.GetComponent<isSpotEmpty>().isEmpty = false;
@@ -62,14 +63,5 @@ public class FollowerManager : MonoBehaviour
     void KillFollowers()
     {
         activeFollowerAmount--;
-    }
-    
-    IEnumerator ExampleCoroutine()
-    {
-        
-        //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(0.5f);
-
-
     }
 }

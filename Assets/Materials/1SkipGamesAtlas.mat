@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 1SkipGamesAtlas
-  m_Shader: {fileID: 4800000, guid: 7ffc1bc2bbb1ef64f84b552b2d2f0619, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: ec02e605f4adaf34c8232de973ac9760, type: 3}
   m_ShaderKeywords: TCP2_MOBILE TCP2_REFLECTIONS_FRESNEL TCP2_RIM_LIGHTING_LIGHTMASK
     TCP2_SHADOW_LIGHT_COLOR TCP2_UV_NORMALS_FULL
   m_LightmapFlags: 4
@@ -69,6 +69,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_5246AA5D: 0.8
+    - Vector1_A0BEB753: 0
+    - Vector1_ED9A46CC: 0.647
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -143,6 +146,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_128B3F85: {r: 1, g: 1, b: 1, a: 0}
+    - Color_2A4B2485: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 0}
+    - Color_8159753D: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 0}
+    - Color_CFD2EF7E: {r: 8, g: 8, b: 8, a: 0}
     - _BaseColor: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
